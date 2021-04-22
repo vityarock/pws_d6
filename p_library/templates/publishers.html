@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous">
+</head>
+{% for pub in publishers %}
+<ul class="list-group list-group-flush font-weight-bold">
+    <li class="list-group-item"> {{ pub.pub_name }}
+        <ul class="list-group list-group-flush font-weight-normal">
+        {% for book in pub.book_set.all %}
+            <li class="list-group-item"> {{ book.title }}</li>
+        {% endfor %}
+        </ul>
+    </li>
+</ul>
+{% endfor %}
