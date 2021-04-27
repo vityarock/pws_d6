@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+<title>{% block extra_title %}проект библиотеки{% endblock extra_title %}</title>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="http://localhost:8000/index/">Библиотека PWS_D6</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost:8000/book/">Список книг</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost:8000/book/create/">Добавить книгу</a>
+      </li>
+            <li class="nav-item">
+        <a class="nav-link" href="http://localhost:8000/publishers/">Издательства</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost:8000/readers/">Наши читатели</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    {% block content %}
+    <p>"parent block"</p>
+
+    {% endblock %}
+</body>
